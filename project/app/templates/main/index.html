@@ -1,0 +1,48 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+    <h1> <b> Hi, {{ current_user.usercode }}!</b></h1>
+    <br>
+    <h3> Here are our movie recommendations for you:  </h3> 
+    <br> <br>
+    <table class= "table table-borderless">
+        <tr>
+            <td ALIGN="CENTER", style="width:20%;">
+                <h3><b><a href="{{ url_for('main.product', title=reco1.title) }}">{{ reco1.title}}</a></b></h3>
+                <br>
+                <p>{{ reco1.genres}}</p>
+                <br>
+                <img src="{{ url_for('static', filename='{}.jpg'.format(reco1.poster_id))}}"  height="256px" width="200px">
+            </td>
+            <td ALIGN="CENTER", style="width:20%;">
+                <h3><b><a href="{{ url_for('main.product', title=reco2.title) }}">{{ reco2.title}}</a></b></h3>
+                <br>
+                <p>{{ reco2.genres}}</p>
+                <br>
+                <img src="{{ url_for('static', filename='{}.jpg'.format(reco2.poster_id))}}"  height="256px" width="200px">
+            </td>
+            <td ALIGN="CENTER", style="width:20%;">
+                <h3><b><a href="{{ url_for('main.product', title=reco3.title) }}">{{ reco3.title}}</a></b></h3>
+                <br>
+                <p>{{ reco3.genres}}</p>
+                <br>
+                <img src="{{ url_for('static', filename='{}.jpg'.format(reco3.poster_id))}}"  height="256px" width="200px">
+            </td>
+            <td ALIGN="CENTER", style="width:20%;">
+                <h3><b><a href="{{ url_for('main.product', title=reco4.title) }}">{{ reco4.title}}</a></b></h3>
+                <br>
+                <p>{{ reco4.genres}}</p>
+                <br>
+                <img src="{{ url_for('static', filename='{}.jpg'.format(reco4.poster_id))}}"  height="256px" width="200px">
+            </td>
+            <td ALIGN="CENTER", style="width:20%;">
+                <h3><b><a href="{{ url_for('main.product', title=reco5.title) }}">{{ reco5.title}}</a></b></h3>
+                <br>
+                <p>{{ reco5.genres}}</p>
+                <br>
+                <img src="{{ url_for('static', filename='{}.jpg'.format(reco5.poster_id))}}"  height="256px" width="200px">
+            </td>
+        </tr>
+    </table>
+{% endblock %}
+

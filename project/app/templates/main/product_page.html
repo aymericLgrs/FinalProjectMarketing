@@ -1,0 +1,31 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+    <table class= "table table-borderless">
+        <tr><td> <h1> {{ product.title}} </h1></td>  </tr>
+        <tr>
+            <td ALIGN="CENTER", style="float:left;width:50%;", width="256px">
+                <img src="{{ url_for('static', filename='{}.jpg'.format(product.poster_id))}}"  height="256px" width="300px">
+            </td>
+            <td ALIGN="CENTER", style="float:left;width:50%;">
+                <br><br><br><br>
+                <h3>{{ product.genres}}</h3>
+                <br>
+                <form action="{{ url_for('main.wish', title=product.title) }}" method="post">
+                    {{ form.hidden_tag() }}
+                    <span aria-hidden="true">{{ form.submit(value='Add to my wishlist', class_='btn btn-secondary mb-2 btn-lg')}}</span>
+                </form>
+                <br><br><br><br>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table class= "table table-borderless">
+       <tr>
+            <td ALIGN="CENTER" >
+                <img src="{{ url_for('static', filename='stream.jpg')}}"  height="300px" width="600px">
+            </td>
+       </tr> 
+    </table>
+{% endblock %}
+

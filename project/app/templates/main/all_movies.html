@@ -1,0 +1,32 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+    {% for p in products %}
+        <table class= "table table-borderless">
+            <tr>
+                <td ALIGN="CENTER", style="width:50%;">
+                    <img src="{{ url_for('static', filename='{}.jpg'.format(p.poster_id))}}"  height="256px" width="300px">
+                </td>
+                <td ALIGN="CENTER", style="width:50%;">
+                    <h2><b><a href="{{ url_for('main.product', title=p.title) }}">{{ p.title}}</a></b></h2>
+                    <br>
+                    <h4>{{ p.genres}}</h4>
+                </td>
+            </tr>
+        </table>
+    {% endfor %}
+    <nav aria-label="Post navigation">
+        <ul class="pagination justify-content-center">
+            <li class="page-item{% if not prev_url %} disabled{% endif %}">
+                <a class="page-link" href="{{ prev_url }}">
+                    <span aria-hidden="true">&larr;</span> Previous
+                </a>
+            </li>
+            <li class="page-item{% if not next_url %} disabled{% endif %}">
+                <a class="page-link" href="{{ next_url }}">
+                    Next <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+{% endblock %}
+

@@ -1,0 +1,36 @@
+<!--python3 -m http.server-->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="loading-screen">
+    <p>Chargement...</p>
+  </div>
+
+  <div id="main-content" style="display: none;">
+    <header>
+      <button id="back-button" class="select-button">Retour</button>
+      <h1 id="site-title">moVIIes</h1>  
+      <div id="profile-info">
+        <img src="icon.png" alt="Profil Image">
+      </div>
+      
+    </header>
+    <p id="weekly-suggestion">Our suggestion for this week:</p>
+    <div class="carousel-container">
+      <div class="carousel">
+      </div>
+      
+    </div>
+    <div class="film-description">
+      <p id="film-genre-selectionne">Movie Genre:</p>
+      <p id="film-description">Hover to discover your movie</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

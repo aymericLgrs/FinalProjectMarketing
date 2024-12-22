@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selection of genres</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <button id="back-genre-button" class="select-button">Back</button>
+    <h1 id="site-title">moVIIes</h1>  
+    <div id="profile-info">
+      <img src= "icon.png" alt="Profil Image">
+    </div>
+    
+  </header>
+  <div id="genre-selection">
+    <h1>Select the 7 genres for this week:</h1>
+    <form id="genres-form">
+      <div class="genre-list">
+        <!-- La liste des genres sera ajoutée dynamiquement via JavaScript -->
+      </div>
+      <button type="submit" id="validate-genres" disabled>Confirm</button>
+    </form>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const genres = [
+        "Action", "Drama", "Comedy", "Sci-Fi", "Horror", "Romance",
+        "Documentary", "Adventure", "Animation", "Mystery", "Thriller",
+        "Fantasy", "Crime", "Western"
+      ];
+
+      const genreList = document.querySelector('.genre-list');
+      const validateButton = document.getElementById('validate-genres');
+      const selectedGenres = new Set();
+
+      genres.forEach(genre => {
+        const genreItem = document.createElement('div');
+        genreItem.classList.add('genre-item');
+        genreItem.innerHTML = `
+          <input type="checkbox" id="${genre}" value="${genre}">
+          <label for="${genre}">${genre}</label>
+        `;
+        genreList.appendChild(genreItem);
+      });
+
+      genreList.addEventListener('change', (event) => {
+        const checkbox = event.target;
+        if (checkbox.checked) {
+          selectedGenres.add(checkbox.value);
+        } else {
+          selectedGenres.delete(checkbox.value);
+        }
+
+        validateButton.disabled = selectedGenres.size !== 7;
+      });
+
+      document.getElementById('genres-form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        localStorage.setItem('selectedGenres', JSON.stringify([...selectedGenres]));
+        window.location.href = 'main.html';
+      });
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+  const backButton = document.getElementById('back-genre-button');
+  if (backButton) {
+      backButton.addEventListener('click', () => {
+          window.location.href = 'profil.html';
+      });
+  }
+});
+
+  </script>
+</body>
+</html>

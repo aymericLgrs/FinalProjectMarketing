@@ -1,0 +1,417 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: 'Broadway 3D';
+  src: url('fonts/Broadway3D.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#site-title {
+  font-family: 'Broadway 3D', sans-serif; /* Appliquer Broadway 3D */
+  font-size: 10em; /* Augmenter la taille de la police */
+  color: #FFD700; /* Jaune */
+  text-shadow: 0 0 10px #FFD700, 0 0 20px #FFA500; /* Effet lumineux */
+  text-align: center;
+  margin: 0; /* Réinitialiser les marges */
+  line-height: 1; /* Contrôler l'espacement vertical */
+}
+
+body {
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Bebas Neue', sans-serif; /* Voir section Police */
+  background-color: #000000; /* Noir */
+  color: #FFD700; /* Jaune doré */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cinema-title {
+  font-size: 2.5em;
+  color: #f3ecec;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+#main-content {
+  width: 90%;
+  text-align: center;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  cursor: pointer;
+  padding: 20px 0;
+}
+
+.carousel-item {
+  position: relative;
+  text-align: center; 
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  width: 300px; 
+  height: 200px; 
+  background-size: cover, cover;
+  background-position: center, center; 
+  border-radius: 10px;
+  overflow: hidden;
+  color: #ffffff;
+  transition: transform 0.3s ease, color 0.3s ease;
+  z-index: 1; /* Par défaut, chaque item reste au même niveau */
+  border: 2px solid #FFD700; /* Bordure jaune */
+}
+
+.carousel-item::before {
+  content: ''; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Par défaut transparent */
+  z-index: 1; 
+  transition: background-color 0.3s ease; 
+  border-radius: 10px; 
+}
+
+.carousel-item:hover {
+  transform: scale(1.2); /* Ajusté pour un effet moins intense que 1.5 */
+  z-index: 10; 
+}
+
+.carousel-item:hover::before {
+  background-color: rgba(0, 0, 0, 0.4); /* Assombrissement progressif */
+}
+
+.carousel-item .text {
+  z-index: 2;
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+}
+
+.carousel-item:hover .text {
+  opacity: 0; 
+}
+
+.film-description {
+  margin-top: 30px;
+  color: #FFD700; 
+  font-size: 1.5em;
+  font-style: bold;
+  text-align: center;
+}
+
+#profile-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+
+  text-transform: uppercase;
+  color: #FFD700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center; /* Centre tous les profils horizontalement */
+  gap: 50px; /* Augmente l'espace horizontal */
+  width: 90%; /* Ajuste la largeur du conteneur */
+  margin: auto; /* Centre le conteneur dans la page */
+}
+
+.profile {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.profile:hover {
+  transform: scale(1.05);
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.select-button {
+  background-color: #FFD700; /* Jaune */
+  color: #000000; /* Noir */
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-family: 'Bebas Neue', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.select-button:hover {
+  color: #a18403; /* Jaune doré */
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px; /* Réduit le padding pour coller tout en haut */
+  box-sizing: border-box;
+  position: fixed; /* Rend l'en-tête fixe en haut */
+  top: 0;
+  left: 0;
+  background-color: #000000; /* Même couleur que l'arrière-plan pour continuité */
+  z-index: 10; /* Pour que l'en-tête soit au-dessus des autres éléments */
+  border-bottom: 2px solid #FFD700;
+}
+
+#back-button {
+  position: relative;
+  background-color: #FFD700; /* Jaune */
+  color: #000000; /* Noir */
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-family: 'Bebas Neue', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#site-title {
+  font-size: 2.5em;
+  color: #FFD700; /* Jaune */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Ombre subtile */
+  margin: 0;
+}
+
+#back-button:hover {
+  color: #a18403; /* Jaune doré */
+}
+
+#profile-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#profile-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#profile-info span {
+  font-size: 1em;
+  color: #FFD700; /* Jaune */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Ombre subtile */
+}
+
+#main-content {
+  width: 90%;
+  text-align: center;
+  margin-top: 120px; /* Espace en dessous de l'en-tête pour éviter la superposition */
+}
+
+#weekly-suggestion {
+  font-size: 1.5em;
+  color: #FFD700; /* Jaune */
+  text-align: center;
+  margin: 30px 0 30px;
+  font-style: italic;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 5;
+}
+
+
+/* Styles pour les films déjà vus */
+.watched {
+  filter: grayscale(100%); /* Griser l'affiche */
+  cursor: not-allowed; /* Indiquer que c'est désactivé */
+  pointer-events: none; /* Désactiver toutes les interactions */
+  transform: none; /* Pas d'effet de transformation */
+}
+
+.watched .text {
+  opacity: 1; /* Toujours afficher le texte, même en état "watched" */
+  color: #f80707; /* Couleur plus claire pour indiquer que le film est vu */
+}
+
+.horror-background {
+  background-image: url('horrorBackground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.comedy-background {
+  background-image: url('comedyBackground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.action-background {
+  background-image: url('actionBackground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.drama-background {
+  background-image: url('drameBackground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.sci-fi-background {
+  background-image: url('sfBackground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.romance-background {
+  background-image: url('romanceBackground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.documentary-background {
+  background-image: url('docuBackground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.animation-background {
+  background-image: url('animationB.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.fantasy-background {
+  background-image: url('fantasyB.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.mystery-background {
+  background-image: url('mysteryB.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.adventure-background {
+  background-image: url('aventureB.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.biography-background {
+  background-image: url('biographyB.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.thriller-background {
+  background-image: url('thrillerB.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.western-background {
+  background-image: url('westernB.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.crime-background {
+  background-image: url('crimeB.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.genre-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.genre-item {
+  display: flex;
+  align-items: center;
+}
+
+.genre-item label {
+  margin-left: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+#back-genre-button {
+  position: relative;
+  background-color: #FFD700; /* Jaune */
+  color: #000000; /* Noir */
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-family: 'Bebas Neue', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#back-genre-button:hover {
+  color: #a18403; /* Jaune doré */
+}
