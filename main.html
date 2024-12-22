@@ -1,36 +1,45 @@
 <!--python3 -m http.server-->
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr"> <!-- Declares the document type and sets the language to French -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8"> <!-- Specifies the character encoding for the document -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive behavior across devices -->
+  <link rel="stylesheet" href="styles.css"> <!-- Links the external stylesheet for styling -->
 </head>
 <body>
-  <div id="loading-screen">
-    <p>Chargement...</p>
+  <!-- Loading Screen Section -->
+  <div id="loading-screen"> <!-- Initially displayed while the content is loading but no longer used-->
+    <p>Loading...</p> <!-- Loading message displayed to the user -->
   </div>
 
-  <div id="main-content" style="display: none;">
-    <header>
-      <button id="back-button" class="select-button">Retour</button>
-      <h1 id="site-title">moVIIes</h1>  
-      <div id="profile-info">
-        <img src="icon.png" alt="Profil Image">
+  <!-- Main Content Section -->
+  <div id="main-content" style="display: none;"> <!-- Hidden until the content has finished loading -->
+    <header> <!-- Defines the header section -->
+      <button id="back-button" class="select-button">Back</button> <!-- A button to navigate back to the previous page -->
+      <h1 id="site-title">moVIIes</h1> <!-- Displays the site title -->
+      <div id="profile-info"> <!-- Section displaying the user's profile information -->
+        <img src="icon.png" alt="Profil Image"> <!-- Displays the profile icon -->
       </div>
-      
     </header>
-    <p id="weekly-suggestion">Our suggestion for this week:</p>
-    <div class="carousel-container">
+    
+    <!-- Weekly Suggestion Section -->
+    <p id="weekly-suggestion">Our suggestion for this week:</p> <!-- Introduces the weekly movie suggestion -->
+    
+    <!-- Carousel Section -->
+    <div class="carousel-container"> <!-- Container for the movie carousel -->
       <div class="carousel">
+        <!-- Movies will be dynamically added here via JavaScript -->
       </div>
-      
     </div>
-    <div class="film-description">
-      <p id="film-genre-selectionne">Movie Genre:</p>
-      <p id="film-description">Hover to discover your movie</p>
+    
+    <!-- Film Description Section -->
+    <div class="film-description"> <!-- Section for the movie details -->
+      <p id="film-genre-selectionne">Movie Genre:</p> <!-- Placeholder for the selected genre -->
+      <p id="film-description">Hover to discover your movie</p> <!-- Prompt for the user to hover over the carousel for details -->
     </div>
   </div>
-  <script src="script.js"></script>
+
+  <!-- External JavaScript File -->
+  <script src="script.js"></script> <!-- Links the script responsible for the page's functionality -->
 </body>
 </html>

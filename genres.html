@@ -1,77 +1,85 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr"> <!-- Declares the document type and sets the language of the page to French -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Selection of genres</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8"> <!-- Specifies the character encoding for the document -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive on all devices -->
+  <title>Selection of genres</title> <!-- Title of the page that appears on the browser tab -->
+  <link rel="stylesheet" href="styles.css"> <!-- Links an external CSS file for styling -->
 </head>
 <body>
-  <header>
-    <button id="back-genre-button" class="select-button">Back</button>
-    <h1 id="site-title">moVIIes</h1>  
-    <div id="profile-info">
-      <img src= "icon.png" alt="Profil Image">
+  <header> <!-- Defines the header section of the page -->
+    <button id="back-genre-button" class="select-button">Back</button> <!-- A button to navigate back to the previous page -->
+    <h1 id="site-title">moVIIes</h1> <!-- Title of the website -->
+    <div id="profile-info"> <!-- A section for the user's profile information -->
+      <img src="icon.png" alt="Profil Image"> <!-- Displays the user's profile icon -->
     </div>
-    
   </header>
-  <div id="genre-selection">
-    <h1>Select the 7 genres for this week:</h1>
-    <form id="genres-form">
-      <div class="genre-list">
-        <!-- La liste des genres sera ajoutée dynamiquement via JavaScript -->
+
+  <div id="genre-selection"> <!-- A container for the genre selection section -->
+    <h1>Select the 7 genres for this week:</h1> <!-- Instructions for the user -->
+    <form id="genres-form"> <!-- A form element to contain the genre selection -->
+      <div class="genre-list"> <!-- A dynamic list of genres to be populated by JavaScript -->
       </div>
-      <button type="submit" id="validate-genres" disabled>Confirm</button>
+      <button type="submit" id="validate-genres" disabled>Confirm</button> <!-- A submit button initially disabled until the user selects exactly 7 genres -->
     </form>
   </div>
+
   <script>
+    // Waits for the page to fully load before executing the script
     document.addEventListener('DOMContentLoaded', () => {
+      // Array containing all the available genres
       const genres = [
         "Action", "Drama", "Comedy", "Sci-Fi", "Horror", "Romance",
         "Documentary", "Adventure", "Animation", "Mystery", "Thriller",
         "Fantasy", "Crime", "Western"
       ];
 
-      const genreList = document.querySelector('.genre-list');
-      const validateButton = document.getElementById('validate-genres');
-      const selectedGenres = new Set();
+      const genreList = document.querySelector('.genre-list'); // Selects the container for the genre checkboxes
+      const validateButton = document.getElementById('validate-genres'); // Selects the "Confirm" button
+      const selectedGenres = new Set(); // A set to store the selected genres (ensures unique values)
 
+      // Dynamically creates a checkbox for each genre and appends it to the genre list
       genres.forEach(genre => {
-        const genreItem = document.createElement('div');
-        genreItem.classList.add('genre-item');
+        const genreItem = document.createElement('div'); // Creates a container for each genre
+        genreItem.classList.add('genre-item'); // Adds a class for styling purposes
         genreItem.innerHTML = `
-          <input type="checkbox" id="${genre}" value="${genre}">
-          <label for="${genre}">${genre}</label>
+          <input type="checkbox" id="${genre}" value="${genre}"> <!-- Checkbox input -->
+          <label for="${genre}">${genre}</label> <!-- Label associated with the checkbox -->
         `;
-        genreList.appendChild(genreItem);
+        genreList.appendChild(genreItem); // Adds the genre to the list in the DOM
       });
 
+      // Adds an event listener to the genre list to handle checkbox changes
       genreList.addEventListener('change', (event) => {
-        const checkbox = event.target;
+        const checkbox = event.target; // The checkbox that triggered the event
         if (checkbox.checked) {
-          selectedGenres.add(checkbox.value);
+          selectedGenres.add(checkbox.value); // Adds the genre to the selected set
         } else {
-          selectedGenres.delete(checkbox.value);
+          selectedGenres.delete(checkbox.value); // Removes the genre if unchecked
         }
 
+        // Enables the "Confirm" button only if exactly 7 genres are selected
         validateButton.disabled = selectedGenres.size !== 7;
       });
 
+      // Handles the form submission
       document.getElementById('genres-form').addEventListener('submit', (event) => {
-        event.preventDefault();
+        event.preventDefault(); // Prevents the form from refreshing the page
+        // Stores the selected genres in localStorage for use on another page
         localStorage.setItem('selectedGenres', JSON.stringify([...selectedGenres]));
-        window.location.href = 'main.html';
+        window.location.href = 'main.html'; // Redirects the user to the next page
       });
     });
-    document.addEventListener('DOMContentLoaded', () => {
-  const backButton = document.getElementById('back-genre-button');
-  if (backButton) {
-      backButton.addEventListener('click', () => {
-          window.location.href = 'profil.html';
-      });
-  }
-});
 
+    // Adds functionality to the "Back" button
+    document.addEventListener('DOMContentLoaded', () => {
+      const backButton = document.getElementById('back-genre-button'); // Selects the "Back" button
+      if (backButton) {
+        backButton.addEventListener('click', () => {
+          window.location.href = 'index.html'; // Redirects the user to the home page
+        });
+      }
+    });
   </script>
 </body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr"> <!-- Declares the document type and sets the language of the page to French -->
+<head>
+  <meta charset="UTF-8"> <!-- Specifies the character encoding for the document -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive on all devices -->
+  <title>Profil Selection</title> <!-- Title of the page that appears on the browser tab -->
+  <link rel="stylesheet" href="styles.css"> <!-- Links an external CSS file for styling -->
+</head>
+<body>
+  
+  <div id="profile-selection"> <!-- A container for the profile selection section -->
+    <h1 id="site-title">moVIIes</h1> <!-- The title of the website -->
+    <h1>Select your profil</h1> <!-- Instruction for the user to choose a profile -->
+    
+    <div class="profile-container"> <!-- A container holding all the available profiles -->
+      
+      <!-- First Profile -->
+      <div class="profile"> <!-- Container for a single profile -->
+        <img src="profil1.png" alt="Profil 1" class="profile-img"> <!-- Displays the image for Profile 1 -->
+        <p>Profil 1</p> <!-- Text label for the profile -->
+        <button class="select-button" data-profile="profil1.png">Profil 1</button> <!-- Button to select this profile; includes a data attribute storing the profile image -->
+      </div>
+
+      <!-- Second Profile -->
+      <div class="profile"> <!-- Container for a single profile -->
+        <img src="profile2.png" alt="Profil 2" class="profile-img"> <!-- Displays the image for Profile 2 -->
+        <p>Profil 2</p> <!-- Text label for the profile -->
+        <button class="select-button" data-profile="profile2.png">Profil 2</button> <!-- Button to select this profile; includes a data attribute storing the profile image -->
+      </div>
+
+      <!-- Third Profile -->
+      <div class="profile"> <!-- Container for a single profile -->
+        <img src="profile3.png" alt="Profil 3" class="profile-img"> <!-- Displays the image for Profile 3 -->
+        <p>Profil 3</p> <!-- Text label for the profile -->
+        <button class="select-button" data-profile="profile3.png">Profil 3</button> <!-- Button to select this profile; includes a data attribute storing the profile image -->
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script> <!-- Links the external JavaScript file for functionality -->
+</body>
+</html>
