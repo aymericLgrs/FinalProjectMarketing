@@ -17,9 +17,9 @@ Welcome on **MOVIIES**, an interactive movie selection platform that allows user
 
 4. **Dynamic Backgrounds**:
    - Hovering over movies changes the background to match the genre, creating an immersive experience.
-
-5. **Responsive Design**:
-   - The platform is optimized for both desktop and mobile devices.
+     
+5. **Movie Watching**:
+   - To simulate the fact that you watched a movie, clicked on it and it will no longer be available. But be careful, if you refresh the page, the site will suggest a whole 7 bunch of new movies as if it was a new week. 
 
 ---
 
