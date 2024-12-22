@@ -1,6 +1,6 @@
-# Final Project Marketing 🎥
+# Final Project Marketing: MOVIIES 🎥
 
-Welcome to **Final Project Marketing**, an interactive movie selection platform that allows users to personalize their weekly movie suggestions based on selected genres and profiles. The project is hosted on **GitHub Pages** and is accessible via this link: [Final Project Marketing](https://aymericlgrs.github.io/FinalProjectMarketing/).
+Welcome on **MOVIIES**, an interactive movie selection platform that allows users to personalize their weekly movie suggestions based on selected genres and profiles. The project is hosted on **GitHub Pages** and is accessible via this link: [Final Project Marketing](https://aymericlgrs.github.io/FinalProjectMarketing/).
 
 ---
 
@@ -63,33 +63,3 @@ Welcome to **Final Project Marketing**, an interactive movie selection platform 
 
 ---
 
-## Screenshots 📸
-
-### **Profile Selection**
-![Profile Selection](path-to-screenshot-profile-selection.png)
-
-### **Genre Selection**
-![Genre Selection](path-to-screenshot-genre-selection.png)
-
-### **Weekly Suggestions**
-![Weekly Suggestions](path-to-screenshot-weekly-suggestions.png)
-
----
-
-## Future Improvements 🚧
-
-- Add a "watched list" to track viewed movies.
-- Expand movie data with trailers and descriptions.
-- Enable multi-language support.
-
----
-
-## Contributors 🤝
-
-- **Aymeric Legros** - Developer and Designer.
-
----
-
-## License 📜
-
-This 
